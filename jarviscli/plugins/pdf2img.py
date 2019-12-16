@@ -5,7 +5,10 @@ from pdf2jpg import pdf2jpg
 @plugin("pdf2img")
 class pdf2img:
     
-    """converts pdf file from path to png, the output folder is in the same folder as the input file"""
+    """converts pdf file from path to png, the output folder 
+       is in the same folder as the input file.
+       Your file must be in the Jarvis Folder
+    """
 
     def __call__(self, jarvis, s):
 
