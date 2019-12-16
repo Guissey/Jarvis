@@ -12,21 +12,20 @@ def image2pdf(jarvis,s):
 
 
 
-
-    if not s:
+    jarvis.say("Enter file name (with the .png/.jpeg extension), the file must be in the Jarvis folder")
+    source_path = jarvis.input()
+    if not source_path:
         jarvis.say("please enter file path after calling the plugin")
-    elif (not "png" in s ) and (not "jpeg" in s):
+    elif (not "png" in source_path ) and (not "jpeg" in source_path):
         jarvis.say("Your file must be a .png or a .jpeg file")
     else:
         #We have to add the '.' back beacause the Jarvis API removes it
-        if "png" in s:
-            s = s.replace('png', '.' + 'png')
-            source_path=s
-            dest_path= s.replace('.png', '') + '.pdf'       
-        elif "jpeg" in s:
-            s = s.replace('jpeg', '.' + 'jpeg')
-            source_path=s
-            dest_path= s.replace('.jpeg', '') + '.pdf'       
+        if "png" in source_path:
+            
+            dest_path= source_path.replace('.png', '') + '.pdf'       
+        elif "jpeg" in source_path:
+            
+            dest_path= source_path.replace('.jpeg', '') + '.pdf'       
             
         try:   
             pdf_bytes = img2pdf.convert(source_path)
