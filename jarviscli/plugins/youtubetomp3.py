@@ -6,7 +6,7 @@ import youtube_dl
 import os
 from pathlib import Path
 
-@require(network=True, native=ffmpeg)
+@require(network=True, native=["ffmpeg"])
 @plugin('youtubetomp3')
 
 def youtubetomp3(jarvis, s):
