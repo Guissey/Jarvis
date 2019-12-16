@@ -6,13 +6,12 @@ import youtube_dl
 import os
 from pathlib import Path
 
-@require(network=True)
+@require(network=True, native=ffmpeg)
 @plugin('youtubetomp3')
 
 def youtubetomp3(jarvis, s):
     '''
-	
-    Download the audio from the video in the specified youtube url
+    Download the audio from the video in the specified youtube url. Also works for playlists. The file(s) will be downloaded in the Music folder or, if not found, in a folder named youtubetomp3. Just type youtubetomp3, then follow the instruction.
     '''
     
     #Looking for music folder. If not found the file will be downloaded in the created directory youtubetomp3 in home.
