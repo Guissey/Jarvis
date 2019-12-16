@@ -24,7 +24,5 @@ class pdf2img:
             
             
             dest_path= source_path.replace('.pdf', '')
-            jarvis.say(source_path)
-            jarvis.say(dest_path)
             result = pdf2jpg.convert_pdf2jpg(source_path, dest_path, pages="ALL")
             jarvis.say("file successfully converted")
